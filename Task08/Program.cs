@@ -5,9 +5,10 @@ int N = Convert.ToInt32(Console.ReadLine());
 int count = 2;
 
 if (N < 2)
-    Console.Write("Некорректная попытка ввода числа");    
+    Console.Write("Некорректная попытка ввода числа");
 
-while (count <= N){
-        Console.Write(count + " ");
-        count +=2;
+while (count <= N)
+{
+    Console.Write(count + " ");
+    count += 2;
 }
