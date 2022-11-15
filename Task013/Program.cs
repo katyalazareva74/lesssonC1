@@ -3,25 +3,18 @@
 Console.Write("Введите число ");
 int number = Convert.ToInt32(Console.ReadLine());
 
-int threeDigit = ThreeDigit(number);
-
-if (threeDigit == 0)
+if (number < 100)
     Console.WriteLine($"{number} --> Нет третьей цифры");
 else
-    Console.WriteLine($"{number} --> {ThirdDigit(threeDigit)}");
+    Console.WriteLine($"{number} --> {ThirdDigit(ThreeDigit(number))}");
 
 int ThreeDigit(int num)
 {
-    if (num < 100)
-        return 0;
-    else
+    while (num >= 1000)
     {
-        while (num >= 1000)
-        {
-            num = num / 10;
-        }
-        return num;
+        num = num / 10;
     }
+    return num;
 }
 
 int ThirdDigit(int num)
