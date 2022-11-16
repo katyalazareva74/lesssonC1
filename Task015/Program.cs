@@ -2,7 +2,6 @@
 
 Console.Write("Введите цифру дня недели ");
 int number = Convert.ToInt32(Console.ReadLine());
-
 if (DayWeek(number) == true)
     Console.WriteLine("Нет такого дня недели!");
 else
