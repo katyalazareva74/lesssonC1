@@ -4,7 +4,7 @@ Console.Write("Введите трехзначное число ");
 int number = Convert.ToInt32(Console.ReadLine());
 if (number < 0)
     number = -number;
-if (CheckUp(number) == true)
+if (CheckUp(number))
     Console.WriteLine("Некорректный ввод числа");
 else
     Console.WriteLine($"Вторая цифра --> {SecondDigit(number)}");
