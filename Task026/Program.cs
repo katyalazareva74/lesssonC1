@@ -1,25 +1,16 @@
-﻿// Вывести массив, заполненный 0 и 1.
-Console.Write("Введите размер массива: ");
-int size = Convert.ToInt32(Console.ReadLine());
-int[] array = new int[size];
-FillArray(array);
-PrintArray(array);
-void FillArray(int[] arr)
+﻿// Ввести число. Узнать количество цифр в числе
+Console.Write("Введите число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+int digit = Digits(number);
+Console.WriteLine($"{number} --> {digit}");
+
+int Digits(int num)
 {
-    Random rnd = new Random();
-    for (int i = 0; i < arr.Length; i++)
+    int n = 0;
+    while (num != 0)
     {
-        arr[i] = rnd.Next(0, 2);
+        num = num / 10;
+        n++;
     }
-}
-void PrintArray(int[] arr)
-{
-    Console.Write("{ ");
-    for (int i = 0; i < arr.Length; i++)
-    {
-        if (i == arr.Length - 1)
-            Console.Write($"{arr[i]} }}");
-        else
-            Console.Write($"{arr[i]}, ");
-    }
+    return n == 0 ? 1 : n;
 }
