@@ -1,6 +1,6 @@
 ﻿// Вводятся номер четверти. Нужно определить диапазон точек в этой четверти. X!=0, Y!=0.
 Console.WriteLine("Введите номер четверти ");
-string quarter = Console.ReadLine();
+string quarter = Console.ReadLine()!;
 
 string Quarter(string num)
 {
