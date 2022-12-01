@@ -1,38 +1,36 @@
 ﻿// Пользователь вводит с клавиатуры M чисел. Посчитайте, сколько чисел больше 0 ввёл пользователь.
 //0, 7, 8, -2, -2 -> 2
 //-1, -7, 567, 89, 223-> 3
-Console.Write("Сколько чисел будет вводиться: ");
-int number = Convert.ToInt32(Console.ReadLine());
-number = CheckNumber(number);
-int[] array = new int[number];
+
 //I ВАРИАНТ (ВВОД В СТОЛБИК)
-//array = EnteringNumbers(number);
+
+//Console.Write("Сколько чисел будет вводиться: ");
+//int number = Convert.ToInt32(Console.ReadLine());
+//number = CheckNumber(number);
+//int[] array = EnteringNumbers(number);
+//int numPositiv = NumberPositiv(array);
+//PrintArray(array);
+//Console.WriteLine($"--> {numPositiv}");
+
 //II ВАРИАНТ (ВВОД ОДНОЙ СТРОКОЙ)
-array = EnteringNumbersStr(number);
+int[] array = EnteringNumbersStr();
 int numPositiv = NumberPositiv(array);
 PrintArray(array);
 Console.WriteLine($"--> {numPositiv}");
 
-string[] Entering(int n)
+string[] Entering()
 {
     string text = String.Empty;
     Console.WriteLine("Введите числа через пробел в одну строку: ");
     text = Console.ReadLine()!;
     string[] arrStr1 = text!.Split(' ');
-    while (arrStr1.Length < n)
-    {
-        Console.WriteLine("Введите числа через пробел в одну строку: ");
-        text = String.Empty;
-        text = Console.ReadLine()!;
-        arrStr1 = text!.Split(' ');
-    }
     return arrStr1;
 }
-int[] EnteringNumbersStr(int size)
+int[] EnteringNumbersStr()
 {
-    int[] arr = new int[size];
-    string[] arrStr = Entering(size);
-    for (int i = 0; i < size; i++)
+    string[] arrStr = Entering();
+    int[] arr = new int[arrStr.Length];
+    for (int i = 0; i < arrStr.Length; i++)
     {
         arr[i] = Convert.ToInt32(arrStr[i]);
     }
