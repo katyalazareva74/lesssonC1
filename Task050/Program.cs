@@ -1,20 +1,18 @@
 ﻿// Напишите программу, которая на вход принимает позиции элемента в двумерном массиве,
 // и возвращает значение этого элемента или же указание, что такого элемента нет.
-Console.Write("Введите размер массива.\nКоличество строк и столбцов:  ");
+
+Console.WriteLine("Введите размер массива.\nКоличество строк и столбцов:  ");
 (int rows1, int columns1) = (Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 (rows1, columns1) = CheckNumber(rows1, columns1);
-Console.Write($"Введите диапазон значений элементов массива.\nМинимальное значение и максимальное: ");
+Console.WriteLine($"Введите диапазон значений элементов массива.\nМинимальное значение и максимальное: ");
 (double minimum, double maximum) = (Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()));
 double[,] array2D = CreateMatrixRndDouble(rows1, columns1, minimum, maximum);
-Console.Write("Введите  позицию элемента в массиве.\nСтрока и столбец:  ");
+Console.WriteLine("Введите  позицию элемента в массиве.\nСтрока и столбец:  ");
 (int x1, int y1) = (Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 PrintMatrix(array2D);
 Console.Write($"[{x1}, {y1}] --> ");
 if (CheckElement(x1, y1, rows1, columns1))
-{
-    double findElement = FindElement(x1, y1, array2D);
-    Console.WriteLine(findElement);
-}
+    Console.WriteLine(array2D[x1, y1]);
 else
     Console.WriteLine("Элемент массиву не принадлежит!");
 
@@ -23,20 +21,6 @@ bool CheckElement(int x, int y, int rows, int columns)
     return ((x >= 0 && x < rows)
     && (y >= 0 && y < columns));
 }
-double FindElement(int x, int y, double[,] matrix)
-{
-    int i = 0, j = 0;
-    while (i != x)
-    {
-        i++;
-    }
-    while (j != y)
-    {
-        j++;
-    }
-    return matrix[i, j];
-}
-
 (int rows, int columns) CheckNumber(int rows, int columns)
 {
     while (rows < 1)
