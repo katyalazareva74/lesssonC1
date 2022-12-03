@@ -1,8 +1,8 @@
 ﻿// Задайте двумерный массив размером m×n, заполненный случайными вещественными числами.
-Console.Write("Введите размер массива.\nКоличество строк и столбцов:  ");
+Console.WriteLine("Введите размер массива.\nКоличество строк и столбцов:  ");
 (int rows1, int columns1) = (Convert.ToInt32(Console.ReadLine()), Convert.ToInt32(Console.ReadLine()));
 (rows1, columns1) = CheckNumber(rows1, columns1);
-Console.Write($"Введите диапазон значений элементов массива.\nМинимальное значение и максимальное: ");
+Console.WriteLine($"Введите диапазон значений элементов массива.\nМинимальное значение и максимальное: ");
 (double minimum, double maximum) = (Convert.ToDouble(Console.ReadLine()), Convert.ToDouble(Console.ReadLine()));
 double[,] array2D = CreateMatrixRndDouble(rows1, columns1, minimum, maximum);
 PrintMatrix(array2D);
