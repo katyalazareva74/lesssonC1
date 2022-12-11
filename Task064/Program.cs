@@ -3,7 +3,7 @@
 //N = 8 -> "8, 7, 6, 5, 4, 3, 2, 1"
 Console.WriteLine("Введите натуральное число: ");
 int number = Convert.ToInt32(Console.ReadLine());
-Console.Write($"N = {number} --> \" ");
+Console.Write($"N = {number} --> \"");
 NaturalNumbers(number);
 Console.WriteLine("\" ");
 void NaturalNumbers(int n)
